@@ -27,18 +27,22 @@
     transform: translate(-50%, -100%);
     white-space: nowrap;
     font-family: Helvetica, Aptos, sans-serif;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 4px 8px;
+    border-radius: 8px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.1);
   }
 </style>
 </head>
 <body>
   <div id="map">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/World_map_-_low_resolution.svg/2000px-World_map_-_low_resolution.svg.png" alt="World Map" style="width: 100%; height: auto;">
-    <div class="pin" style="top: 42%; left: 75%;" id="hongkong">📍 Hong Kong - Cam, Daphne, Monica</div>
-    <div class="pin" style="top: 40%; left: 77%;" id="beijing">📍 Beijing - Amy</div>
-    <div class="pin" style="top: 44%; left: 77%;" id="shenzhen">📍 Shenzhen - Guang, Zongyang</div>
-    <div class="pin" style="top: 54%; left: 77%;" id="singapore">📍 Singapore - Oscar</div>
-    <div class="pin" style="top: 42%; left: 80%;" id="seoul">📍 Seoul - Kate</div>
-    <div class="pin" style="top: 40%; left: 20%;" id="sanfran">📍 San Francisco - Pinkie</div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Equirectangular_projection_SW.jpg" alt="World Map" style="width: 100%; height: auto;">
+    <div class="pin" style="top: 42%; left: 75%;" id="hongkong">📍 Hong Kong</div>
+    <div class="pin" style="top: 40%; left: 77%;" id="beijing">📍 Beijing</div>
+    <div class="pin" style="top: 44%; left: 77%;" id="shenzhen">📍 Shenzhen</div>
+    <div class="pin" style="top: 54%; left: 77%;" id="singapore">📍 Singapore</div>
+    <div class="pin" style="top: 42%; left: 80%;" id="seoul">📍 Seoul</div>
+    <div class="pin" style="top: 40%; left: 20%;" id="sanfran">📍 San Francisco</div>
     <div class="pin" style="top: 60%; left: 88%;" id="auckland">📍 Auckland</div>
     <div class="pin" style="top: 60%; left: 87%;" id="sydney">📍 Sydney</div>
     <div class="pin" style="top: 40%; left: 18%;" id="la">📍 Los Angeles</div>
@@ -49,18 +53,18 @@
 
 <script>
 const cities = [
-  { id: 'hongkong', timezone: 'Asia/Hong_Kong' },
-  { id: 'beijing', timezone: 'Asia/Shanghai' },
-  { id: 'shenzhen', timezone: 'Asia/Shanghai' },
-  { id: 'singapore', timezone: 'Asia/Singapore' },
-  { id: 'seoul', timezone: 'Asia/Seoul' },
-  { id: 'sanfran', timezone: 'America/Los_Angeles' },
-  { id: 'auckland', timezone: 'Pacific/Auckland' },
-  { id: 'sydney', timezone: 'Australia/Sydney' },
-  { id: 'la', timezone: 'America/Los_Angeles' },
-  { id: 'dc', timezone: 'America/New_York' },
-  { id: 'london', timezone: 'Europe/London' },
-  { id: 'berlin', timezone: 'Europe/Berlin' },
+  { id: 'hongkong', timeZone: 'Asia/Hong_Kong' },
+  { id: 'beijing', timeZone: 'Asia/Shanghai' },
+  { id: 'shenzhen', timeZone: 'Asia/Shanghai' },
+  { id: 'singapore', timeZone: 'Asia/Singapore' },
+  { id: 'seoul', timeZone: 'Asia/Seoul' },
+  { id: 'sanfran', timeZone: 'America/Los_Angeles' },
+  { id: 'auckland', timeZone: 'Pacific/Auckland' },
+  { id: 'sydney', timeZone: 'Australia/Sydney' },
+  { id: 'la', timeZone: 'America/Los_Angeles' },
+  { id: 'dc', timeZone: 'America/New_York' },
+  { id: 'london', timeZone: 'Europe/London' },
+  { id: 'berlin', timeZone: 'Europe/Berlin' },
 ];
 
 function updateClocks() {
